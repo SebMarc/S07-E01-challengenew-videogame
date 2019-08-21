@@ -1,11 +1,11 @@
-<?php
-require('layout/header.php');
-?>
-    <main class="container">
+@extends('app')
 
-            <div class="col-12 col-md-4">
+@section('content')
+
+        <h1>Ajouter un jeu video</h1>
+        <div class="row">
+            <div class="col-12">
                 <div class="card">
-                    <div class="card-header">Ajout</div>
                     <div class="card-body">
                         <form action="" method="post">
                             <div class="form-group">
@@ -28,14 +28,13 @@ require('layout/header.php');
                                     <option value="">TODO</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-success btn-block">Ajouter</button>
+                            <a href="<?= route('home') ?>" class="btn btn-link">Annuler</a>
+                            <button type="submit" class="btn btn-success">Ajouter</button>
                         </form>
                     </div>
                 </div>
-                <a href = 'home'><input type="button" value = "Home"></a>
             </div>
-    </main>
+        </div>
 
-    <?php
-require('layout/footer.php');
-?>
+        
+@endsection

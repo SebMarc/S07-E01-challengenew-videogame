@@ -12,12 +12,16 @@
 */
 
 
-$router->get('/home', ['as' => 'home', 'uses' => 'MainController@homeAction']);
+use Illuminate\Http\Response;
 
-$router->get('/admin',['as' => 'admin', 'uses' => 'MainController@admin']);
+$router->get('/', [
+    'as' => 'home', 
+    'uses' => 'MainController@homepage'
+]);
 
-
-// $urlhome = route('home');
-
+$router->get('/admin', [
+    'as' => 'add-videogame', 
+    'uses' => 'AdminController@addVideogame'
+]);
 
 

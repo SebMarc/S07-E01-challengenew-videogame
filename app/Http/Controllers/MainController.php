@@ -2,13 +2,22 @@
 
 namespace App\Http\Controllers;
 
-class MainController extends Controller
-{
-   public function admin() {
-    return view('admin');
-   }
+use App\Models\Videogame;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-   public function homeAction() {
-       return view ('home');
-   }
+class MainController extends Controller {
+
+    public function homepage(Request $request) {
+
+        $order = $request->input('order', 'id');
+
+        // $videogames = DB::select("SELECT * FROM videogame");
+
+        // $videogames = Videogame::all();
+
+        $videogames = Videogame::orderBy($order)->get();
+        
+        return view('homepage', ['videogames' => $videogames]);
+    }
 }
