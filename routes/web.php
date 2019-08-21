@@ -11,13 +11,13 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
 
-$router->get('admin',['as' => 'admin', 'uses' => 'MainController@admin']);
+$router->get('/home', ['as' => 'home', 'uses' => 'MainController@homeAction']);
 
-$router->get('home', ['as' => 'home', 'uses' => 'MainController@homeAction']);
+$router->get('/admin',['as' => 'admin', 'uses' => 'MainController@admin']);
+
+
+// $urlhome = route('home');
 
 
 
